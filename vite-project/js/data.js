@@ -1,4 +1,4 @@
-const data = [
+const gpuData = [
   {
     name: "Geforce RTX 3050",
     brand: "NVIDIA",
@@ -157,3 +157,5 @@ const data = [
     inStock: true,
   },
 ];
+
+export { gpuData };
