@@ -1,2 +1,2 @@
 import { gpuData } from "./data.js";
-console(gpuData);
+console.log(gpuData);
