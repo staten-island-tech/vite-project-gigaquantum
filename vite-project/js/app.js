@@ -1,1 +1,0 @@
-import { gpuData } from "./data";
