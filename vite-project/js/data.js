@@ -13,6 +13,7 @@ const data = [
     price: 264.99,
     sale: false,
     desc: "1660 super with 'ray tracing' and dlss",
+    inStock: true,
   },
   {
     name: "Radeon RX 6650XT",
@@ -28,6 +29,7 @@ const data = [
     price: 274.99,
     sale: true,
     desc: "3060 performance while keeping both kidneys",
+    inStock: false,
   },
   {
     name: "Geforce GTX 1650 SUPER",
@@ -42,6 +44,7 @@ const data = [
     price: 172.98,
     sale: false,
     desc: "throw it in an Optiplex and you'll be gaming",
+    inStock: false,
   },
   {
     name: "Radeon RX 570",
@@ -56,7 +59,8 @@ const data = [
       "https://cdna.pcpartpicker.com/static/forever/images/product/a80faa0593a24dfdb6d6d8c773035d29.256p.jpg",
     price: 532.67,
     sale: false,
-    desc: "bEsT vAlUe uSeD gPu iN 2019",
+    desc: "bEsT vAlUe uSeD gPu oF 2019",
+    inStock: true,
   },
   {
     name: "Radeon RX 5700XT",
@@ -72,6 +76,7 @@ const data = [
     price: 2.99,
     sale: true,
     desc: "the drivers still give me nightmares",
+    inStock: true,
   },
   {
     name: "Radeon RX 6900XT",
@@ -87,6 +92,7 @@ const data = [
     price: 569.99,
     sale: true,
     desc: "tHe aMd mArKeTiNg mAcHiNe -Userbenchmark",
+    inStock: false,
   },
   {
     name: "Geforce RTX 2080 Ti",
@@ -101,7 +107,8 @@ const data = [
       "https://cdna.pcpartpicker.com/static/forever/images/product/03524d3eecccc31527c359f9de79d9c7.256p.jpg",
     price: 872.98,
     sale: true,
-    desc: "sold to get 3090 but the store doesn't have any",
+    desc: "sold to get a 3090 but the store doesn't have any",
+    inStock: true,
   },
   {
     name: "Geforce GTX 1070",
@@ -116,6 +123,7 @@ const data = [
     price: 517.98,
     sale: false,
     desc: "pAsCaL iS sTiLl gOoD iN 2022",
+    inStock: true,
   },
   {
     name: "Radeon RX 6400",
@@ -131,6 +139,7 @@ const data = [
     price: 139.99,
     sale: false,
     desc: "budget gpu that requires pcie 4.0",
+    inStock: true,
   },
   {
     name: "Geforce GTX 480",
@@ -145,5 +154,6 @@ const data = [
     price: 76.47,
     sale: false,
     desc: "free spaceheater included",
+    inStock: true,
   },
 ];
