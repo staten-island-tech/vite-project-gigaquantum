@@ -1,4 +1,60 @@
+*,
+body,
+html {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    font-family: 'Roboto Mono', monospace; 
+}
+
 body {
     background-color: rgb(191, 240, 223);
-    font-family: 'Roboto Mono', monospace;
+    width: 100vw;
+}
+
+.head-bin {
+    text-align: center;
+    background-color: rgb(153, 64, 64);
+    color: aliceblue;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 7.5rem;
+    padding: 2rem;
+}
+
+.card-bin {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 1rem;
+}
+
+.card-img {
+    width: 100%;
+}
+
+.item-card {
+    background-color: bisque;
+    width: 30vw;
+    height: 50vw;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-items: space-around;
+}
+
+.card-title {
+    font-size: 3.5rem;
+}
+
+.card-desc {
+    font-size: 2rem;
+    color: rgb(34, 34, 34);
+}
+
+.card-price {
+    font-size: 2.75rem;
+    color: rgb(120, 173, 156);
 }
