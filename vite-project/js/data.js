@@ -12,7 +12,7 @@ const gpuData = [
       "https://cdna.pcpartpicker.com/static/forever/images/product/8c66a78438b30cea4126c5e3130e9119.256p.jpg",
     price: 264.99,
     sale: false,
-    desc: "1660 super with 'ray tracing' and dlss",
+    desc: '1660 super with "ray tracing" and dlss',
     inStock: true,
   },
   {
@@ -107,7 +107,7 @@ const gpuData = [
       "https://cdna.pcpartpicker.com/static/forever/images/product/03524d3eecccc31527c359f9de79d9c7.256p.jpg",
     price: 872.98,
     sale: true,
-    desc: "sold to get a 3090 but the store doesn't have any",
+    desc: "sold to get a 3090 but they're out of stock",
     inStock: true,
   },
   {

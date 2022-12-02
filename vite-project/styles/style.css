@@ -11,9 +11,10 @@ html {
 body {
     background-color: rgb(191, 240, 223);
     width: 100vw;
+    font-size: 1rem;
 }
 
-.head-bin {
+#head-bin {
     text-align: center;
     background-color: rgb(153, 64, 64);
     color: aliceblue;
@@ -23,11 +24,17 @@ body {
     padding: 2rem;
 }
 
-.card-bin {
+#filter-bin {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 1rem;
+    align-content: space-around;
+}
+
+#card-bin {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .card-img {
@@ -43,10 +50,11 @@ body {
     flex-wrap: wrap;
     flex-direction: column;
     justify-items: space-around;
+    margin: 1rem;
 }
 
 .card-title {
-    font-size: 3.5rem;
+    font-size: 3rem;
 }
 
 .card-desc {
@@ -55,6 +63,11 @@ body {
 }
 
 .card-price {
-    font-size: 2.75rem;
+    font-size: 2.5rem;
     color: rgb(120, 173, 156);
+}
+
+.filter-button {
+    padding: 0.4rem;
+    font-size: 2rem;
 }

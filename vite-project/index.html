@@ -12,17 +12,22 @@
     <title>Pro GPU Shop</title>
   </head>
   <body>
-    <div class="head-bin">
+    <div id="head-bin">
       <h1>Pro GPU Shop</h1>
-    </div>
-    <div class="card-bin">
-      <div class="item-card">
-        <img class="card-img" src="https://cdna.pcpartpicker.com/static/forever/images/product/a80faa0593a24dfdb6d6d8c773035d29.256p.jpg" alt="image">
-        <h2 class="card-title">RX 2090</h2>
-        <p class="card-desc">wow a gpu that definetly exists</p>
-        <p class="card-price">$386.79</p>
+      <div id="filter-bin">
+        <button class="filter-button" id="nvidia">NVIDIA</button>
+        <button class="filter-button" id="nvidia">AMD</button>
+        <button class="filter-button" id="nvidia">On Sale</button>
+        <button class="filter-button" id="nvidia">In Stock</button>
+        <button class="filter-button" id="nvidia">Ray Tracing</button>
+        <button class="filter-button" id="nvidia">High RAM (&gt;6GB)</button>
+        <button class="filter-button" id="nvidia">Low RAM (&lt;6GB)</button>
+        <button class="filter-button" id="nvidia">Price: Low to High</button>
+        <button class="filter-button" id="nvidia">Price: High to Low</button>
+
       </div>
     </div>
+    <div id="card-bin"></div>
     <script type="module" src="js/main.js"></script>
   </body>
 </html>
