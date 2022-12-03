@@ -119,7 +119,8 @@ const gpuData = [
     },
     memoryGB: 8,
     rayTracing: false,
-    imgLink: "https://m.media-amazon.com/images/I/515jAee9GsL.jpg",
+    imgLink:
+      "https://cdna.pcpartpicker.com/static/forever/images/product/680c0029818543d0572346dc4c313631.256p.jpg",
     price: 517.98,
     sale: false,
     desc: "pAsCaL iS sTiLl gOoD iN 2022",

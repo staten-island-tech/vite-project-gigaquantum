@@ -23,3 +23,57 @@ function addCard(
 gpuData.forEach((gpu) =>
   addCard(gpu.imgLink, gpu.name, gpu.brand, gpu.desc, gpu.price)
 );
+
+function removeItems(selector) {
+  document.querySelectorAll(selector).forEach((item) => item.remove());
+}
+
+function resetButtons(selector) {
+  document.querySelectorAll(selector).forEach((btn) => {
+    btn.style.color = "black";
+    btn.style.backgroundColor = "grey";
+  });
+}
+
+function displayFilteredItems(filterType, targetValue) {
+  const filterTypeObj = `gpu.${filterType}`;
+  gpuData
+    .filter((gpu) => filterTypeObj.includes(targetValue))
+    .forEach((filteredGPU) => {
+      addCard(
+        filteredGPU.imgLink,
+        filteredGPU.name,
+        filteredGPU.brand,
+        filteredGPU.desc,
+        filteredGPU.price
+      );
+      console.log(filteredGPU);
+    });
+}
+
+function highlightButton(btnID) {
+  document.getElementById(btnID).style.color = "white";
+  document.getElementById(btnID).style.backgroundColor = "black";
+}
+
+function activateFilter(btnID, filterType, targetValue) {
+  resetButtons("filter-btn");
+  highlightButton(btnID);
+  removeItems(".item-card");
+  displayFilteredItems(filterType, targetValue);
+}
+
+function resetAll() {
+  removeItems(".item-card");
+  gpuData.forEach((gpu) =>
+    addCard(gpu.imgLink, gpu.name, gpu.brand, gpu.desc, gpu.price)
+  );
+  resetButtons("filter-btn");
+  console.log("reset");
+}
+
+// activateFilter("nvidia", "brand", "NVIDIA");
+const filterTest = gpuData.filter((gpu) => gpu.brand.includes("NVIDIA"));
+console.log(filterTest);
+
+document.getElementById("reset-btn").addEventListener("click", resetAll());
