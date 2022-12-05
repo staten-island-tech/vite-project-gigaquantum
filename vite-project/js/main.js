@@ -31,7 +31,7 @@ function removeItems(selector) {
 function resetButtons(selector) {
   document.querySelectorAll(selector).forEach((btn) => {
     btn.style.color = "black";
-    btn.style.backgroundColor = "grey";
+    btn.style.backgroundColor = "white";
   });
 }
 
@@ -57,7 +57,7 @@ function highlightButton(btnID) {
 }
 
 function activateFilter(btnID, filterType, targetValue) {
-  resetButtons("filter-btn");
+  resetButtons(".filter-btn");
   highlightButton(btnID);
   removeItems(".item-card");
   displayFilteredItems(filterType, targetValue);
@@ -68,12 +68,27 @@ function resetAll() {
   gpuData.forEach((gpu) =>
     addCard(gpu.imgLink, gpu.name, gpu.brand, gpu.desc, gpu.price)
   );
-  resetButtons("filter-btn");
+  resetButtons(".filter-btn");
   console.log("reset");
 }
 
-// activateFilter("nvidia", "brand", "NVIDIA");
-const filterTest = gpuData.filter((gpu) => gpu.brand.includes("NVIDIA"));
-console.log(filterTest);
+//activateFilter("nvidia", "brand", "NVIDIA");
+// removeItems(".item-card");
+/* gpuData
+  .filter((gpu) => gpu.brand.includes("NVIDIA"))
+  .forEach((gpu) =>
+    addCard(gpu.imgLink, gpu.name, gpu.brand, gpu.desc, gpu.price)
+  );*/
 
-document.getElementById("reset-btn").addEventListener("click", resetAll());
+/*const filterTest = gpuData.filter((gpu) => gpu.brand.includes("NVIDIA"));
+console.log(filterTest);*/
+
+document.querySelectorAll(".filter-btn").forEach((btn) => {
+  if ((btn.id = "reset-btn")) {
+    document.getElementById("reset-btn").addEventListener("click", function () {
+      resetAll();
+    });
+  } else {
+    console.log("Filter Button Event Listener");
+  }
+});
