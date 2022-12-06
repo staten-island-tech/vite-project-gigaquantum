@@ -36,17 +36,16 @@ function resetButtons(selector) {
 }
 
 function displayFilteredItems(filterType, targetValue) {
-  const filterTypeObj = `gpu.${filterType}`;
   gpuData
-    .filter((gpu) => filterTypeObj.includes(targetValue))
+    .filter((gpu) => gpu[filterType].includes(targetValue))
     .forEach((filteredGPU) => {
-      addCard(
+      /*addCard(
         filteredGPU.imgLink,
         filteredGPU.name,
         filteredGPU.brand,
         filteredGPU.desc,
         filteredGPU.price
-      );
+      );*/
       console.log(filteredGPU);
     });
 }
@@ -84,7 +83,7 @@ function resetAll() {
 console.log(filterTest);*/
 
 document.querySelectorAll(".filter-btn").forEach((btn) => {
-  if ((btn.id = "reset-btn")) {
+  if ((btn.id == "reset-btn")) {
     document.getElementById("reset-btn").addEventListener("click", function () {
       resetAll();
     });
