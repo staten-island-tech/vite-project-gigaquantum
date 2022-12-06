@@ -39,13 +39,13 @@ function displayFilteredItems(filterType, targetValue) {
   gpuData
     .filter((gpu) => gpu[filterType].includes(targetValue))
     .forEach((filteredGPU) => {
-      /*addCard(
+      addCard(
         filteredGPU.imgLink,
         filteredGPU.name,
         filteredGPU.brand,
         filteredGPU.desc,
         filteredGPU.price
-      );*/
+      );
       console.log(filteredGPU);
     });
 }
@@ -70,17 +70,6 @@ function resetAll() {
   resetButtons(".filter-btn");
   console.log("reset");
 }
-
-//activateFilter("nvidia", "brand", "NVIDIA");
-// removeItems(".item-card");
-/* gpuData
-  .filter((gpu) => gpu.brand.includes("NVIDIA"))
-  .forEach((gpu) =>
-    addCard(gpu.imgLink, gpu.name, gpu.brand, gpu.desc, gpu.price)
-  );*/
-
-/*const filterTest = gpuData.filter((gpu) => gpu.brand.includes("NVIDIA"));
-console.log(filterTest);*/
 
 document.querySelectorAll(".filter-btn").forEach((btn) => {
   if ((btn.id == "reset-btn")) {
