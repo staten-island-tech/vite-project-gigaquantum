@@ -1,4 +1,4 @@
-import "/styles/style.css";
+import "../styles/style.css";
 import { gpuData } from "./data.js";
 console.log(gpuData);
 
@@ -50,6 +50,21 @@ function displayFilteredItems(filterType, targetValue) {
     });
 }
 
+/*function displaySortedItems(sortType) {
+  gpuData
+    .sort((gpu) => gpu[filterType].includes(targetValue))
+    .forEach((filteredGPU) => {
+      addCard(
+        filteredGPU.imgLink,
+        filteredGPU.name,
+        filteredGPU.brand,
+        filteredGPU.desc,
+        filteredGPU.price
+      );
+      console.log(filteredGPU);
+    });
+}*/
+
 function highlightButton(btnID) {
   document.getElementById(btnID).style.color = "white";
   document.getElementById(btnID).style.backgroundColor = "black";
@@ -72,7 +87,7 @@ function resetAll() {
 }
 
 document.querySelectorAll(".filter-btn").forEach((btn) => {
-  if ((btn.id == "reset-btn")) {
+  if (btn.id == "reset-btn") {
     document.getElementById("reset-btn").addEventListener("click", function () {
       resetAll();
     });
@@ -80,3 +95,9 @@ document.querySelectorAll(".filter-btn").forEach((btn) => {
     console.log("Filter Button Event Listener");
   }
 });
+
+function myFunction(text) {
+  console.log(text);
+}
+
+myFunction();
