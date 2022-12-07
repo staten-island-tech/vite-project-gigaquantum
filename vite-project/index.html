@@ -12,23 +12,20 @@
     <title>Pro GPU Shop</title>
   </head>
   <body>
-    <script type="module" src="../js/main.js"></script>
     <div id="head-bin">
       <h1>Pro GPU Shop</h1>
       <div id="filter-bin">
-        <button class="filter-btn" onclick="activateFilter(this.id, 'brand', 'NVIDIA')">NVIDIA</button>
-        <button class="filter-btn" onclick="activateFilter(this.id, filterType, targetValue)">AMD</button>
-        <button class="filter-btn" onclick="activateFilter(this.id, filterType, targetValue)">On Sale</button>
-        <button class="filter-btn" onclick="activateFilter(this.id, filterType, targetValue)">In Stock</button>
-        <button class="filter-btn" onclick="activateFilter(this.id, filterType, targetValue)">Ray Tracing</button>
-        <button class="filter-btn" onclick="activateFilter(this.id, filterType, targetValue)">High RAM (&gt;6GB)</button>
-        <button class="filter-btn" onclick="activateFilter(this.id, filterType, targetValue)">Low RAM (&lt;6GB)</button>
-        <button class="filter-btn" onclick="myFunction('test')" id="price-low-high">
-          Price: Low to High
-        </button>
-        <button class="filter-btn" id="reset-btn">Reset</button>
+        <button class="filter-btn" id="nvidia">NVIDIA</button>
+        <button class="filter-btn" id="amd">AMD</button>
+        <button class="filter-btn" id="sale">On Sale</button>
+        <button class="filter-btn" id="stock">In Stock</button>
+        <button class="filter-btn" id="ray-tracing">Ray Tracing</button>
+        <button class="filter-btn" id="high-ram">High RAM (&gt;6GB)</button>
+        <button class="filter-btn" id="low-ram">Low RAM (&lt;6GB)</button>
+        <button class="filter-btn" id="reset">Reset</button>
       </div>
     </div>
     <div id="card-bin"></div>
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>

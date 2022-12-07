@@ -1,5 +1,5 @@
 import "../styles/style.css";
-import { gpuData } from "./data.js";
+import { gpuData } from "./gpuData.js";
 console.log(gpuData);
 
 function addCard(
@@ -35,35 +35,57 @@ function resetButtons(selector) {
   });
 }
 
-function displayFilteredItems(filterType, targetValue) {
-  gpuData
-    .filter((gpu) => gpu[filterType].includes(targetValue))
-    .forEach((filteredGPU) => {
-      addCard(
-        filteredGPU.imgLink,
-        filteredGPU.name,
-        filteredGPU.brand,
-        filteredGPU.desc,
-        filteredGPU.price
-      );
-      console.log(filteredGPU);
-    });
+function displayFilteredItems(
+  filterType,
+  targetValue,
+  filterMethod,
+  greaterOrLess
+) {
+  if (filterMethod == "match") {
+    gpuData
+      .filter((gpu) => gpu[filterType].includes(targetValue))
+      .forEach((filteredGPU) => {
+        addCard(
+          filteredGPU.imgLink,
+          filteredGPU.name,
+          filteredGPU.brand,
+          filteredGPU.desc,
+          filteredGPU.price
+        );
+        console.log(filteredGPU);
+      });
+  }
+  if (filterMethod == sort) {
+    if (greaterOrLess == "greater") {
+      gpuData
+        .filter((gpu) => gpu[filterType] > targetValue)
+        .forEach((filteredGPU) => {
+          addCard(
+            filteredGPU.imgLink,
+            filteredGPU.name,
+            filteredGPU.brand,
+            filteredGPU.desc,
+            filteredGPU.price
+          );
+          console.log(filteredGPU);
+        });
+    }
+    if (greaterOrLess == "less") {
+      gpuData
+        .filter((gpu) => gpu[filterType] < targetValue)
+        .forEach((filteredGPU) => {
+          addCard(
+            filteredGPU.imgLink,
+            filteredGPU.name,
+            filteredGPU.brand,
+            filteredGPU.desc,
+            filteredGPU.price
+          );
+          console.log(filteredGPU);
+        });
+    }
+  }
 }
-
-/*function displaySortedItems(sortType) {
-  gpuData
-    .sort((gpu) => gpu[filterType].includes(targetValue))
-    .forEach((filteredGPU) => {
-      addCard(
-        filteredGPU.imgLink,
-        filteredGPU.name,
-        filteredGPU.brand,
-        filteredGPU.desc,
-        filteredGPU.price
-      );
-      console.log(filteredGPU);
-    });
-}*/
 
 function highlightButton(btnID) {
   document.getElementById(btnID).style.color = "white";
@@ -74,7 +96,7 @@ function activateFilter(btnID, filterType, targetValue) {
   resetButtons(".filter-btn");
   highlightButton(btnID);
   removeItems(".item-card");
-  displayFilteredItems(filterType, targetValue);
+  displayFilteredItems(filterType, targetValue, filterMethod, greaterOrLess);
 }
 
 function resetAll() {
@@ -86,18 +108,43 @@ function resetAll() {
   console.log("reset");
 }
 
-document.querySelectorAll(".filter-btn").forEach((btn) => {
-  if (btn.id == "reset-btn") {
-    document.getElementById("reset-btn").addEventListener("click", function () {
-      resetAll();
-    });
-  } else {
-    console.log("Filter Button Event Listener");
-  }
+// Adding event listeners for each filter button
+document.getElementById("nvidia").addEventListener("click", function () {
+  activateFilter(document.getElementById("nvidia").id, "brand", "NVIDIA");
 });
 
-function myFunction(text) {
-  console.log(text);
-}
+document.getElementById("amd").addEventListener("click", function () {
+  activateFilter(document.getElementById("amd").id, "brand", "AMD");
+});
 
-myFunction();
+document.getElementById("sale").addEventListener("click", function () {
+  activateFilter(document.getElementById("sale").id, "sale", true);
+});
+
+document.getElementById("stock").addEventListener("click", function () {
+  activateFilter(document.getElementById("stock").id, "inStock", true);
+});
+
+document.getElementById("ray-tracing").addEventListener("click", function () {
+  activateFilter(document.getElementById("ray-tracing").id, "rayTracing", true);
+});
+
+document.getElementById("nvidia").addEventListener("click", function () {
+  activateFilter(document.getElementById("nvidia").id, "brand", "NVIDIA");
+});
+
+document.getElementById("nvidia").addEventListener("click", function () {
+  activateFilter(document.getElementById("nvidia").id, "brand", "NVIDIA");
+});
+
+document.getElementById("nvidia").addEventListener("click", function () {
+  activateFilter(document.getElementById("nvidia").id, "brand", "NVIDIA");
+});
+
+document.getElementById("nvidia").addEventListener("click", function () {
+  activateFilter(document.getElementById("nvidia").id, "brand", "NVIDIA");
+});
+
+document.getElementById("nvidia").addEventListener("click", function () {
+  activateFilter(document.getElementById("nvidia").id, "brand", "NVIDIA");
+});
