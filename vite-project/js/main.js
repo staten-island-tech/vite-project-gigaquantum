@@ -35,6 +35,57 @@ function resetButtons(selector) {
   });
 }
 
+function filterByMatch(filterType, targetValue) {
+  gpuData
+    .filter((element) => element[filterType] == targetValue)
+    .forEach((filteredGPU) => {
+      addCard(
+        filteredGPU.imgLink,
+        filteredGPU.name,
+        filteredGPU.brand,
+        filteredGPU.desc,
+        filteredGPU.price
+      );
+      console.log(filteredGPU);
+    });
+}
+
+function compareGreater(filterType, targetValue) {
+  gpuData
+    .filter((gpu) => gpu[filterType] > targetValue)
+    .forEach((filteredGPU) => {
+      addCard(
+        filteredGPU.imgLink,
+        filteredGPU.name,
+        filteredGPU.brand,
+        filteredGPU.desc,
+        filteredGPU.price
+      );
+    });
+}
+
+function compareLess(filterType, targetValue) {
+  gpuData
+    .filter((gpu) => gpu[filterType] < targetValue)
+    .forEach((filteredGPU) => {
+      addCard(
+        filteredGPU.imgLink,
+        filteredGPU.name,
+        filteredGPU.brand,
+        filteredGPU.desc,
+        filteredGPU.price
+      );
+    });
+}
+
+function filterByCompare(filterType, targetValue, greaterOrLess) {
+  if (greaterOrLess == "greater") {
+    compareGreater(filterType, targetValue);
+  } else {
+    compareLess(filterType, targetValue);
+  }
+}
+
 function displayFilteredItems(
   filterType,
   targetValue,
@@ -42,48 +93,9 @@ function displayFilteredItems(
   greaterOrLess
 ) {
   if (filterMethod == "match") {
-    gpuData
-      .filter((gpu) => gpu[filterType].includes(targetValue))
-      .forEach((filteredGPU) => {
-        addCard(
-          filteredGPU.imgLink,
-          filteredGPU.name,
-          filteredGPU.brand,
-          filteredGPU.desc,
-          filteredGPU.price
-        );
-        console.log(filteredGPU);
-      });
+    filterByMatch(filterType, targetValue);
   }
-  if (filterMethod == sort) {
-    if (greaterOrLess == "greater") {
-      gpuData
-        .filter((gpu) => gpu[filterType] > targetValue)
-        .forEach((filteredGPU) => {
-          addCard(
-            filteredGPU.imgLink,
-            filteredGPU.name,
-            filteredGPU.brand,
-            filteredGPU.desc,
-            filteredGPU.price
-          );
-          console.log(filteredGPU);
-        });
-    }
-    if (greaterOrLess == "less") {
-      gpuData
-        .filter((gpu) => gpu[filterType] < targetValue)
-        .forEach((filteredGPU) => {
-          addCard(
-            filteredGPU.imgLink,
-            filteredGPU.name,
-            filteredGPU.brand,
-            filteredGPU.desc,
-            filteredGPU.price
-          );
-          console.log(filteredGPU);
-        });
-    }
+  if (filterMethod == "compare") {
   }
 }
 
@@ -92,7 +104,13 @@ function highlightButton(btnID) {
   document.getElementById(btnID).style.backgroundColor = "black";
 }
 
-function activateFilter(btnID, filterType, targetValue) {
+function activateFilter(
+  btnID,
+  filterType,
+  targetValue,
+  filterMethod,
+  greaterOrLess
+) {
   resetButtons(".filter-btn");
   highlightButton(btnID);
   removeItems(".item-card");
@@ -110,41 +128,55 @@ function resetAll() {
 
 // Adding event listeners for each filter button
 document.getElementById("nvidia").addEventListener("click", function () {
-  activateFilter(document.getElementById("nvidia").id, "brand", "NVIDIA");
+  activateFilter(
+    document.getElementById("nvidia").id,
+    "brand",
+    "NVIDIA",
+    "match"
+  );
 });
 
 document.getElementById("amd").addEventListener("click", function () {
-  activateFilter(document.getElementById("amd").id, "brand", "AMD");
+  activateFilter(document.getElementById("amd").id, "brand", "AMD", "match");
 });
 
 document.getElementById("sale").addEventListener("click", function () {
-  activateFilter(document.getElementById("sale").id, "sale", true);
+  activateFilter(document.getElementById("sale").id, "sale", true, "match");
 });
 
 document.getElementById("stock").addEventListener("click", function () {
-  activateFilter(document.getElementById("stock").id, "inStock", true);
+  activateFilter(document.getElementById("stock").id, "inStock", true, "match");
 });
 
 document.getElementById("ray-tracing").addEventListener("click", function () {
-  activateFilter(document.getElementById("ray-tracing").id, "rayTracing", true);
+  activateFilter(
+    document.getElementById("ray-tracing").id,
+    "rayTracing",
+    true,
+    "match"
+  );
 });
 
-document.getElementById("nvidia").addEventListener("click", function () {
-  activateFilter(document.getElementById("nvidia").id, "brand", "NVIDIA");
+document.getElementById("high-ram").addEventListener("click", function () {
+  activateFilter(
+    document.getElementById("high-ram").id,
+    "memoryGB",
+    6,
+    "compare",
+    "greater"
+  );
 });
 
-document.getElementById("nvidia").addEventListener("click", function () {
-  activateFilter(document.getElementById("nvidia").id, "brand", "NVIDIA");
+document.getElementById("low-ram").addEventListener("click", function () {
+  activateFilter(
+    document.getElementById("low-ram").id,
+    "memoryGB",
+    6,
+    "compare",
+    "less"
+  );
 });
 
-document.getElementById("nvidia").addEventListener("click", function () {
-  activateFilter(document.getElementById("nvidia").id, "brand", "NVIDIA");
-});
-
-document.getElementById("nvidia").addEventListener("click", function () {
-  activateFilter(document.getElementById("nvidia").id, "brand", "NVIDIA");
-});
-
-document.getElementById("nvidia").addEventListener("click", function () {
-  activateFilter(document.getElementById("nvidia").id, "brand", "NVIDIA");
+document.getElementById("reset").addEventListener("click", function () {
+  resetAll();
 });
