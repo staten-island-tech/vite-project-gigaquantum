@@ -96,6 +96,7 @@ function displayFilteredItems(
     filterByMatch(filterType, targetValue);
   }
   if (filterMethod == "compare") {
+    filterByCompare(filterType, targetValue, greaterOrLess);
   }
 }
 
