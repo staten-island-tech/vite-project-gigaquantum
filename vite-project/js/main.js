@@ -24,11 +24,10 @@ const products = {
       products.addCard(gpu.imgLink, gpu.name, gpu.brand, gpu.desc, gpu.price)
     );
   },
+  removeAllCards: function (selector) {
+    document.querySelectorAll(selector).forEach((item) => item.remove());
+  },
 };
-
-function removeItems(selector) {
-  document.querySelectorAll(selector).forEach((item) => item.remove());
-}
 
 function resetButtons(selector) {
   document.querySelectorAll(selector).forEach((btn) => {
@@ -116,12 +115,12 @@ function activateFilter(
 ) {
   resetButtons(".filter-btn");
   highlightButton(btnID);
-  removeItems(".item-card");
+  products.removeAllCards(".item-card");
   displayFilteredItems(filterType, targetValue, filterMethod, greaterOrLess);
 }
 
 function resetAll() {
-  removeItems(".item-card");
+  products.removeAllCards(".item-card");
   products.addAllCards();
   resetButtons(".filter-btn");
   console.log("reset");
