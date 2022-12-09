@@ -1,28 +1,30 @@
 import "../styles/style.css";
 import { gpuData } from "./gpuData.js";
-console.log(gpuData);
 
-function addCard(
-  imageLink,
-  productName,
-  productBrand,
-  productDesc,
-  productPrice
-) {
-  document.getElementById("card-bin").insertAdjacentHTML(
-    "beforeend",
-    `<div class="item-card">
-<img class="card-img" src="${imageLink}" alt="${productBrand} ${productName}">
-<h2 class="card-title">${productBrand} ${productName}</h2>
-<p class="card-desc">${productDesc}</p>
-<p class="card-price">$${productPrice}</p>
-</div>`
-  );
-}
-
-gpuData.forEach((gpu) =>
-  addCard(gpu.imgLink, gpu.name, gpu.brand, gpu.desc, gpu.price)
-);
+const products = {
+  addCard: function (
+    imageLink,
+    productName,
+    productBrand,
+    productDesc,
+    productPrice
+  ) {
+    document.getElementById("card-bin").insertAdjacentHTML(
+      "beforeend",
+      `<div class="item-card">
+  <img class="card-img" src="${imageLink}" alt="${productBrand} ${productName}">
+  <h2 class="card-title">${productBrand} ${productName}</h2>
+  <p class="card-desc">${productDesc}</p>
+  <p class="card-price">$${productPrice}</p>
+  </div>`
+    );
+  },
+  addAllCards: function () {
+    gpuData.forEach((gpu) =>
+      products.addCard(gpu.imgLink, gpu.name, gpu.brand, gpu.desc, gpu.price)
+    );
+  },
+};
 
 function removeItems(selector) {
   document.querySelectorAll(selector).forEach((item) => item.remove());
@@ -39,7 +41,7 @@ function filterByMatch(filterType, targetValue) {
   gpuData
     .filter((element) => element[filterType] == targetValue)
     .forEach((filteredGPU) => {
-      addCard(
+      products.addCard(
         filteredGPU.imgLink,
         filteredGPU.name,
         filteredGPU.brand,
@@ -54,7 +56,7 @@ function compareGreater(filterType, targetValue) {
   gpuData
     .filter((gpu) => gpu[filterType] > targetValue)
     .forEach((filteredGPU) => {
-      addCard(
+      products.addCard(
         filteredGPU.imgLink,
         filteredGPU.name,
         filteredGPU.brand,
@@ -68,7 +70,7 @@ function compareLess(filterType, targetValue) {
   gpuData
     .filter((gpu) => gpu[filterType] < targetValue)
     .forEach((filteredGPU) => {
-      addCard(
+      products.addCard(
         filteredGPU.imgLink,
         filteredGPU.name,
         filteredGPU.brand,
@@ -120,12 +122,13 @@ function activateFilter(
 
 function resetAll() {
   removeItems(".item-card");
-  gpuData.forEach((gpu) =>
-    addCard(gpu.imgLink, gpu.name, gpu.brand, gpu.desc, gpu.price)
-  );
+  products.addAllCards();
   resetButtons(".filter-btn");
   console.log("reset");
 }
+
+// Initially add the cards to the html
+products.addAllCards();
 
 // Adding event listeners for each filter button
 document.getElementById("nvidia").addEventListener("click", function () {
