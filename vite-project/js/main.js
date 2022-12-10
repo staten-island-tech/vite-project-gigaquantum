@@ -139,9 +139,29 @@ document.getElementById("nvidia").addEventListener("click", function () {
   );
 });
 
-document.getElementById("amd").addEventListener("click", function () {
+function filterEventListener(
+  btnID,
+  filterType,
+  targetValue,
+  filterMethod,
+  greaterOrLess
+) {
+  document.getElementById(btnID).addEventListener("click", function () {
+    activateFilter(
+      document.getElementById(btnID).id,
+      filterType,
+      targetValue,
+      filterMethod,
+      greaterOrLess
+    );
+  });
+}
+
+filterEventListener("amd", "brand", "AMD", "match");
+
+/* document.getElementById("amd").addEventListener("click", function () {
   activateFilter(document.getElementById("amd").id, "brand", "AMD", "match");
-});
+}); */
 
 document.getElementById("sale").addEventListener("click", function () {
   activateFilter(document.getElementById("sale").id, "sale", true, "match");
