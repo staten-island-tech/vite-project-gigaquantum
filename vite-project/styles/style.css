@@ -71,3 +71,19 @@ body {
     padding: 0.4rem;
     font-size: 2rem;
 }
+
+#theme-btn {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: blueviolet;
+    width: 5rem;
+    height: 5rem;
+    font-size: 1rem;
+    border-radius: 100%;
+}
+
+#theme-btn:active {
+    color: cornflowerblue;
+    background-color: rgb(102, 34, 165);
+}
