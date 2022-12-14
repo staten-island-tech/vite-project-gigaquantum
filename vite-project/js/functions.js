@@ -149,6 +149,15 @@ const buttons = {
       );
     });
   },
+  toggleTheme: function () {
+    if (document.body.classList.contains("main-theme")) {
+      document.body.classList.remove("main-theme");
+      document.body.classList.add("alt-theme");
+    } else {
+      document.body.classList.remove("alt-theme");
+      document.body.classList.add("main-theme");
+    }
+  },
 };
 
 export { products, filterFunctions, buttons };

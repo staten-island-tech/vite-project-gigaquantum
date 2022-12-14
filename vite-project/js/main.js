@@ -21,13 +21,5 @@ document.getElementById("reset").addEventListener("click", function () {
 
 // Adding event listener for theme button
 document.getElementById("theme-btn").addEventListener("click", function () {
-  if (document.body.classList.contains("main-theme")) {
-    document.body.classList.remove("main-theme");
-    document.body.classList.add("alt-theme");
-    console.log("alt");
-  } else {
-    document.body.classList.remove("alt-theme");
-    document.body.classList.add("main-theme");
-    console.log("main");
-  }
+  buttons.toggleTheme();
 });
