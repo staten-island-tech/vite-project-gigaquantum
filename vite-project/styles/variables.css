@@ -1,17 +1,40 @@
 :root {
     /*MAIN THEME*/
     /*Colors*/
+    --azure: #dafdfd;
     --dark-khaki: #CACF85;
     --dark-sea-green: #8CBA80;
+    --black-sea-green: #4e614a;
     --steel-teal: #658E9C;
     --purple-navy: #4D5382;
     --english-violet: #514663;
 
     /*ALT-THEME*/
     /*Colors*/
-    
+    --cultured: #c4bdbd;
+    --silver: #C6C7C4;
+    --spanish-gray: #A2999E;
+    --onyx: #353B3C;
+    --outer-space-crayola: #85a4a7;
+    --smoky-grey: #726e69;
 }
 
 .main-theme {
+    --background-color: var(--english-violet);
+    --accent-color: var(--purple-navy);
+    --price-color: var(--steel-teal);
+    --item-background: var(--dark-khaki);
+    --button-background: var(--dark-sea-green);
+    --button-highlighted: var(--black-sea-green);
+    --text-highlighted: var(--azure);
+}
 
+.alt-theme {
+    --background-color: var(--silver);
+    --accent-color: var(--spanish-gray);
+    --price-color: var(--outer-space-crayola);
+    --item-background: var(--smoky-grey);
+    --button-background: var(--onyx);
+    --button-highlighted: var(--cultured);
+    --text-highlighted: var(--onyx);
 }

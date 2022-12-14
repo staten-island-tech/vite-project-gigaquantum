@@ -9,15 +9,15 @@ html {
 }
 
 body {
-    background-color: rgb(191, 240, 223);
+    background-color: var(--background-color);
     width: 100vw;
     font-size: 1rem;
 }
 
 #head-bin {
     text-align: center;
-    background-color: rgb(153, 64, 64);
-    color: aliceblue;
+    background-color: var(--accent-color);
+    color: var(--text-highlighted);
     width: 100%;
     padding: 0.5rem;
     font-size: 7.5rem;
@@ -42,48 +42,52 @@ body {
 }
 
 .item-card {
-    background-color: bisque;
-    width: 30vw;
-    height: 50vw;
+    background-color: var(--item-background);
+    width: 29rem;
+    height: 50rem;
     text-align: center;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-items: space-around;
-    margin: 1rem;
+    margin: 1.4rem 1rem;
 }
 
 .card-title {
     font-size: 3rem;
+    color: var(--accent-color);
 }
 
 .card-desc {
     font-size: 2rem;
-    color: rgb(34, 34, 34);
+    color: var(--accent-color);
 }
 
 .card-price {
     font-size: 2.5rem;
-    color: rgb(120, 173, 156);
+    color: var(--price-color);
 }
 
 .filter-button {
     padding: 0.4rem;
+    margin: 0.5rem;
     font-size: 2rem;
+    background-color: var(--button-background);
+    color: var(--accent-color);
 }
 
 #theme-btn {
     position: fixed;
     bottom: 1rem;
     right: 1rem;
-    background-color: blueviolet;
-    width: 5rem;
-    height: 5rem;
-    font-size: 1rem;
+    background-color: var(--button-background);
+    color: var(--accent-color);
+    width: 5.2rem;
+    height: 5.2rem;
+    font-size: 1.5rem;
     border-radius: 100%;
 }
 
-#theme-btn:active {
-    color: cornflowerblue;
-    background-color: rgb(102, 34, 165);
+#head-title {
+    margin: auto auto 2rem auto;
 }

@@ -104,14 +104,15 @@ const filterFunctions = {
 const buttons = {
   resetButtons: function (selector) {
     document.querySelectorAll(selector).forEach((btn) => {
-      btn.style.color = "black";
-      btn.style.backgroundColor = "white";
+      btn.style.color = "var(--accent-color)";
+      btn.style.backgroundColor = "var(--button-background)";
     });
   },
 
   highlightButton: function (btnID) {
-    document.getElementById(btnID).style.color = "white";
-    document.getElementById(btnID).style.backgroundColor = "black";
+    document.getElementById(btnID).style.color = "var(--text-highlighted)";
+    document.getElementById(btnID).style.backgroundColor =
+      "var(--button-highlighted)";
   },
 
   activateFilter: function (
