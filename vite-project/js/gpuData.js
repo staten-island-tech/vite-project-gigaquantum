@@ -28,7 +28,7 @@ const gpuData = [
       "https://cdna.pcpartpicker.com/static/forever/images/product/f4cddf5d1800a09ed0b49516f4f810cc.256p.jpg",
     price: 274.99,
     sale: true,
-    desc: "3060 performance while keeping both kidneys",
+    desc: "3060 performance without declaring bankruptcy",
     inStock: false,
   },
   {
